@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/Javlon2000/gRPC-CRUD-App/proto";
+
+service ToDoService {
+	rpc Create(CreateRequest) returns (ToDo) {}
+
+	rpc Read(ReadRequest) returns (ToDo) {}
+
+	rpc Update(UpdateRequest) returns (ToDo) {}
+
+	rpc Delete(DeleteRequest) returns (Empty){}
+
+	rpc ReadAll(ReadAllRequest) returns (ReadAllResponse){}
+}
+
+message ToDo {
+	string id = 1;
+	string title = 2;
+	string description = 3;
+	bool completed = 4;
+}
+
+message CreateRequest {
+	ToDo to_do = 1;
+}
+
+message ReadRequest {
+	string id = 1;
+}
+
+message UpdateRequest {
+	ToDo to_do = 1;
+}
+
+message DeleteRequest {
+	string id = 1;
+}
+
+message ReadAllRequest {}
+
+message ReadAllResponse {
+	repeated ToDo todos = 1;
+}
+
+message Empty {}
