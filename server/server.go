@@ -19,8 +19,8 @@ import (
 const (
 	HOST = "localhost"
 	PORT = 5432
-	USER = "javlon"
-	PASSWORD = "therichestman8"
+	USER = ""
+	PASSWORD = ""
 	DBNAME = "go_grpc"
 )
 
